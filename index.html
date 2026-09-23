@@ -1,19 +1,60 @@
-<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Learn to Fly 2</title>
 
-<script>
-  window.RufflePlayer = window.RufflePlayer || {};
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      overflow: hidden;
+    }
 
-  window.RufflePlayer.config = {
-    autoplay: "on",
-    scale: "exactFit",
-    forceScale: true,
-    letterbox: "off"
-  };
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  const ruffle = window.RufflePlayer.newest();
-  const player = ruffle.createPlayer();
+    #game {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  document.getElementById("game").appendChild(player);
+    ruffle-player {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
 
-  player.load("game.swf");
-</script>
+<body>
+  <div id="game"></div>
+
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+
+    window.RufflePlayer.config = {
+      autoplay: "on"
+    };
+
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+
+    document.getElementById("game").appendChild(player);
+
+    player.load("game.swf");
+  </script>
+</body>
+</html>
+```
