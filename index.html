@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Learn to Fly 2</title>
+  <style>
+    body { margin:0; background:#111; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+    #game { width:100vw; height:60vh; }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = { autoplay: "on" };
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    document.getElementById("game").appendChild(player);
+    player.load("game.swf");
+  </script>
+</body>
+</html>
