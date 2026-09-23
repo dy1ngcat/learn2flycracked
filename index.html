@@ -1,20 +1,19 @@
-<body>
-  <div id="game"></div>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 
-  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+<script>
+  window.RufflePlayer = window.RufflePlayer || {};
 
-  <script>
-    window.RufflePlayer = window.RufflePlayer || {};
-    window.RufflePlayer.config = {
-      autoplay: "on"
-    };
+  window.RufflePlayer.config = {
+    autoplay: "on",
+    scale: "exactFit",
+    forceScale: true,
+    letterbox: "off"
+  };
 
-    const ruffle = window.RufflePlayer.newest();
-    const player = ruffle.createPlayer();
+  const ruffle = window.RufflePlayer.newest();
+  const player = ruffle.createPlayer();
 
-    document.getElementById("game").appendChild(player);
+  document.getElementById("game").appendChild(player);
 
-    player.load("game.swf");
-  </script>
-</body>
-</html>
+  player.load("game.swf");
+</script>
